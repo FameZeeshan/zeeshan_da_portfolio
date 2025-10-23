@@ -6,7 +6,7 @@ const Home: React.FC = () => (
     <div className="container">
       <div className="profile-wrapper">
         <img
-          src="/images/zeeshan.jpg"
+          src="/images/Zeeshan.jpg"
           alt="profile"
           className="profile-photo"
         />

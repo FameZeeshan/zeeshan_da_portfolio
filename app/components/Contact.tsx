@@ -56,7 +56,7 @@ const Contact: React.FC = () => (
           https://github.com/FameZeeshan
         </a>
       </p>
-      <a href="resume.pdf" id="resume" download>
+      <a href="ZeeshanDA1025.pdf" id="resume" download>
         <button>Download Resume</button>
       </a>
     </div>

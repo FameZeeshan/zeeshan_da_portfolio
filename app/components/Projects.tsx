@@ -22,7 +22,7 @@ Developed an automated data pipeline using Python (Pandas) to handle data extrac
 
   {
     title: "Seat Billing Automation (Confidential)",
-    image: "/images/Seat Billing Sample Sanp.png",
+    image: "/images/Seat Billing Sample Samp.png",
     description:
       "Developed Python/pandas automation pipeline for seat billing validation. Processed 50K+ records with 95% accuracy, reducing manual effort by 90%. (Project details confidential)",
     code: null,
@@ -35,7 +35,7 @@ Developed an automated data pipeline using Python (Pandas) to handle data extrac
     description:
       "Built an intelligent seat allocation system that automates hybrid workplace seat management. Detects booking conflicts, tracks real-time occupancy across multiple cities, and generates professional heatmap visualizations to see day by day usage and free seats info. Processes any number of allocations with 100% conflict detection accuracy. Tech: Python, Pandas, Matplotlib, Seaborn.",
     code: "https://github.com/FameZeeshan/hoteling-tracker",
-    demo: "https://github.com/FameZeeshan/hoteling-tracker",
+    demo: "/images/Hotelling_Seats_System.html",
   },
 ];
 

@@ -21,10 +21,10 @@ Developed an automated data pipeline using Python (Pandas) to handle data extrac
   },
 
   {
-    title: "Seat Billing Automation (Confidential)",
+    title: "Global Seat Billing Automation",
     image: "/images/Seat Billing Sample Samp.png",
     description:
-      "Developed Python/pandas automation pipeline for seat billing validation. Processed 50K+ records with 95% accuracy, reducing manual effort by 90%. (Project details confidential)",
+      "Developed Python/pandas automation pipeline for seat billing validation. Processed 5K+ records with 95% accuracy, reducing manual effort by 90%. (Project details confidential)",
     code: null,
     demo: null,
     badge: "Confidential",

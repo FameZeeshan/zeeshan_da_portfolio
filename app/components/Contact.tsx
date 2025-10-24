@@ -73,9 +73,9 @@ const Contact: React.FC = () => (
         border-radius: 18px;
         box-shadow: 0 2px 18px rgba(62, 72, 105, 0.11);
         padding: 38px 28px;
-        max-width: 900px;
+        max-width: 1150px;
         width: 100%;
-        margin: 42px auto 42px auto;
+        margin: 20px auto 20px auto;
         transition: background 0.3s, color 0.3s;
         text-align: center;
       }

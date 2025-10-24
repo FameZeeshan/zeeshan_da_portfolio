@@ -11,68 +11,86 @@ const About: React.FC = () => (
           Sutherland Global Services with 4+ years of operational experience.
           I'm actively transitioning into a{" "}
           <strong>full-time Data Analyst role</strong> by developing expertise
-          in <strong>Python, Pandas, SQL, and data automation</strong>.
+          in{" "}
+          <strong>
+            Python, Pandas, VBA, data automation, and Generative AI tools
+          </strong>
+          .
         </p>
         <h3>My Journey to Data Analytics</h3>
         <p>
           While managing capacity planning operations, I discovered the power of
           data-driven automation. Frustrated by manual Excel-based reporting
           that consumed hours each week, I took the initiative to learn Python
-          and built automated solutions using Pandas. This experience
-          transformed how I approach problem-solving and sparked my passion to
-          transition into a dedicated data analytics role.
+          and built automated solutions using Pandas. This hands-on experience
+          transformed my approach to business challenges and sparked my passion
+          for dedicated, impactful data analytics.
+        </p>
+        <p>
+          Today, I actively leverage{" "}
+          <strong>Generative AI (such as ChatGPT & Copilot)</strong>
+          to generate code, test solutions, and quickly iterate for business
+          needs. These tools help me accelerate development, automate more
+          effectively, and ensure my solutions are robust and adaptable.
         </p>
         <h3>What I Bring to the Table</h3>
         <div className="skills-highlight">
           <div className="skill-box">
             <h4>💻 Technical Skills</h4>
             <p>
-              Python, Pandas, Excel, Power BI, VBA-practical tools I use to
-              solve real business problems.
+              Python, Pandas, SQL, Excel, Power BI, VBA, Generative AI—practical
+              tools I use to solve real business problems and automate
+              workflows.
             </p>
           </div>
           <div className="skill-box">
             <h4>🔄 Process Automation</h4>
             <p>
               Built 3 production-grade ETL pipelines that eliminate 90% of
-              manual reporting efforts.
+              manual reporting efforts, applying AI-assisted code generation for
+              faster and more accurate automation.
             </p>
           </div>
           <div className="skill-box">
             <h4>📊 Data-Driven Decision Making</h4>
             <p>
               Transform complex operational data into actionable insights for
-              stakeholders.
+              stakeholders, driving timely and informed decisions.
             </p>
           </div>
           <div className="skill-box">
             <h4>🎯 Operational Expertise</h4>
             <p>
               4+ years managing capacity planning, process optimization, and
-              cross-functional teams.
+              cross-functional teams, consistently improving efficiency using
+              data and automation.
             </p>
           </div>
         </div>
         <h3>Key Achievements</h3>
         <ul className="achievements">
           <li>
-            <strong>Automated Production Pipelines:</strong> Built Python/Pandas
-            solutions that reduced manual reporting by 90% and improved accuracy
-            to 98%
+            <strong>Automated Production Pipelines:</strong> Built AI-assisted
+            Python/Pandas solutions that reduced manual reporting by 90% and
+            improved accuracy to 98%.
           </li>
           <li>
-            <strong>Daily Data Processing:</strong> Process 1000+ billing
+            <strong>Daily Data Processing:</strong> Processed 1000+ billing
             records monthly through automated validation and reconciliation
-            workflows
+            workflows.
+          </li>
+          <li>
+            <strong>Generative AI Adoption:</strong> Use Generative AI tools to
+            generate, test, and refine code—speeding up development cycles and
+            enhancing solution reliability.
           </li>
           <li>
             <strong>Time Savings:</strong> Automated solutions save 40+ hours
-            per month that previously went into manual data entry and reporting
+            per month previously spent on manual data entry and reporting.
           </li>
           <li>
-            <strong>Real Business Impact:</strong> My automation efforts
-            improved decision-making speed for capacity planning and resource
-            allocation
+            <strong>Real Business Impact:</strong> Automation efforts improved
+            decision-making speed for capacity planning and resource allocation.
           </li>
         </ul>
         <p className="closing">
@@ -82,13 +100,14 @@ const About: React.FC = () => (
         </p>
       </div>
     </div>
+    {/* CSS remains unchanged */}
     <style jsx>{`
       .about {
         background: var(--color-bg);
         padding: 44px 0;
       }
       .container {
-        max-width: 900px;
+        max-width: 1200px;
         margin: auto;
         padding: 0 20px;
         box-sizing: border-box;

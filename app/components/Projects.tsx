@@ -77,10 +77,10 @@ const Projects: React.FC = () => (
     <style jsx>{`
       .projects {
         background: var(--color-bg);
-        padding: 44px 0;
+        padding: 20px 0;
       }
       .container {
-        max-width: 900px;
+        max-width: 1200px;
         margin: auto;
         padding: 0 20px;
       }
@@ -94,7 +94,7 @@ const Projects: React.FC = () => (
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 22px;
-        margin-top: 32px;
+        margin-top: 2px;
       }
       .project-card {
         background: var(--color-card);

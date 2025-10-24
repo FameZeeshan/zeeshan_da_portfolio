@@ -115,10 +115,10 @@ const Experience: React.FC = () => (
     <style jsx>{`
       .experience {
         background: var(--color-bg);
-        padding: 44px 0;
+        padding: 20px 0;
       }
       .container {
-        max-width: 900px;
+        max-width: 1200px;
         margin: auto;
         padding: 0 20px;
       }
@@ -133,7 +133,7 @@ const Experience: React.FC = () => (
         background: var(--color-card);
         color: var(--color-text);
         border-radius: 16px;
-        padding: 34px 28px;
+        padding: 10px 32px;
         margin-bottom: 20px;
         box-shadow: 0 2px 14px rgba(54, 55, 149, 0.07);
         font-size: 1.04rem;

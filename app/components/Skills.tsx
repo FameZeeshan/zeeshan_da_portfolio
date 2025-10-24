@@ -81,7 +81,7 @@ const Skills: React.FC = () => {
           padding: 44px 0;
         }
         .container {
-          max-width: 900px;
+          max-width: 1200px;
           margin: auto;
           padding: 0 20px;
           width: 100%;

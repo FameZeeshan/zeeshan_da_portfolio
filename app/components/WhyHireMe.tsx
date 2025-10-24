@@ -23,8 +23,8 @@ const WhyHireMe: React.FC = () => (
         background: var(--color-bg);
         border-radius: 15px;
         margin: 38px auto 28px auto;
-        padding: 30px 20px;
-        max-width: 900px;
+        padding: 10px 20px;
+        max-width: 1200px;
         box-shadow: 0 2px 14px rgba(62, 72, 105, 0.12);
       }
       .why-hire-me h2 {

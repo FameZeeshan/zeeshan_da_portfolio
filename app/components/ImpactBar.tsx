@@ -13,13 +13,13 @@ const ImpactBar: React.FC = () => (
         gap: 22px;
         background: var(--color-card);
         justify-content: center;
-        margin: 32px auto 20px auto;
-        padding: 16px 0;
+        margin: 20px auto 20px auto;
+        padding: 10px 0;
         font-weight: bold;
         font-size: 1.09rem;
         box-shadow: 0 2px 8px rgba(62, 72, 105, 0.12);
         border-radius: 13px;
-        max-width: 820px;
+        max-width: 1200px;
       }
       .impact-bar div {
         flex: 1 1 140px;

@@ -37,6 +37,14 @@ Developed an automated data pipeline using Python (Pandas) to handle data extrac
     code: "https://github.com/FameZeeshan/Hotelling-Seats-Booking.git",
     demo: "/images/Hotelling_Seats_System.html",
   },
+  {
+    title: "Swiggy Restaurant Data Visualization",
+    image: "/images/Swiggy Project Snap.png",
+    description:
+      "This project analyzes the Swiggy restaurant dataset to uncover insights into restaurant distribution, pricing trends, customer ratings, delivery times, and food preferences across major Indian cities. Using Python with pandas and matplotlib, the study covers 8,680 restaurants across 9 cities and 833 areas. It highlights restaurant concentration in metros, regional pricing patterns, popular cuisines, and the correlation between delivery times and ratings. The insights have been visually validated, and key results are hard-coded in the functions for clear output.",
+    code: "https://github.com/FameZeeshan/Swiggy-Data-Analytics.git",
+    demo: "/images/swiggy_project.html",
+  },
 ];
 
 const Projects: React.FC = () => (

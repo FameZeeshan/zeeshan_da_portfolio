@@ -1,0 +1,184 @@
+.contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg),
+    rgba(245, 248, 255, 0.8)
+  );
+}
+
+.contactCard {
+  background: var(--color-card);
+  color: var(--color-text);
+  border-radius: 18px;
+  box-shadow: 0 4px 25px rgba(62, 72, 105, 0.1);
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 1.9rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contactColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactColumn p {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  line-height: 1.6;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+/* ✨ Icon hover pulse effect */
+.icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(0, 102, 255, 0.5));
+}
+
+.whatsapp {
+  color: #25d366;
+}
+
+.linkedin {
+  color: #0077b5;
+  animation: linkedinPulse 2.5s infinite ease-in-out;
+}
+
+.github {
+  color: #171515;
+}
+
+/* 🩵 Subtle LinkedIn blue pulse animation */
+@keyframes linkedinPulse {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 119, 181, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(0, 119, 181, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(0, 119, 181, 0.6);
+  }
+}
+
+/* Scoped links */
+.contactCard a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.contactCard a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.resumeContainer {
+  margin-top: 12px;
+  text-align: left;
+}
+
+/* ✨ Glowing Resume Button */
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 💫 Subtle glowing animation on hover */
+.resumeBtn:hover {
+  background: var(--color-primary);
+  box-shadow: 0 0 12px rgba(0, 102, 255, 0.4), 0 0 25px rgba(0, 102, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.resumeBtn:active {
+  transform: scale(0.97);
+}
+
+.btnIcon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* ✨ Button icon animation */
+.resumeBtn:hover .btnIcon {
+  transform: translateY(-3px) scale(1.1);
+}
+
+@media (max-width: 900px) {
+  .contactCard {
+    padding: 40px 25px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .resumeContainer {
+    text-align: center;
+  }
+
+  .resumeBtn {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .contactColumn p {
+    font-size: 0.95rem;
+  }
+}

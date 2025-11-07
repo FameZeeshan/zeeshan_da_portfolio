@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import styles from "./Projects.module.css";
+
 type Project = {
   title: string;
   image: string;
@@ -12,34 +14,29 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Automated Global Capacity Dashboard",
-    image: "/images/GCD Sample Snap.png",
+    image: "/images/GCD Sample Snap.webp",
     description: `Python/Pandas ETL Pipeline with Excel Integration for Live Business Monitoring.
 Developed an automated data pipeline using Python (Pandas) to handle data extraction, cleaning, and transformation from multiple Excel sources. Integrated Excel templates linked through Power Query for dynamic data refresh and visualization. Automated repetitive reporting and formatting tasks using VBA scripts, enabling quick updates and near real-time business monitoring. This system streamlined manual workflows, improved data accuracy, and significantly reduced report preparation time.`,
-    code: null,
-    demo: null,
     badge: "Confidential",
   },
-
   {
     title: "Global Seat Billing Automation",
-    image: "/images/Seat Billing Sample Samp.png",
+    image: "/images/Seat Billing Sample.webp",
     description:
       "Developed Python/pandas automation pipeline for seat billing validation. Processed 5K+ records with 95% accuracy, reducing manual effort by 90%. (Project details confidential)",
-    code: null,
-    demo: null,
     badge: "Confidential",
   },
   {
     title: "Hoteling Seat Allocation Tracker",
-    image: "/images/Hotelling Seats Occupancy Visuals.png",
+    image: "/images/Hotelling Seats Occupancy Visuals.webp",
     description:
-      "Built an intelligent seat allocation system that automates hybrid workplace seat management. Detects booking conflicts, tracks real-time occupancy across multiple cities, and generates professional heatmap visualizations to see day by day usage and free seats info. Processes any number of allocations with 100% conflict detection accuracy. Tech: Python, Pandas, Matplotlib, Seaborn.",
+      "Built an intelligent seat allocation system that automates hybrid workplace seat management. Detects booking conflicts, tracks real-time occupancy across multiple cities, and generates professional heatmap visualizations. Processes any number of allocations with 100% conflict detection accuracy. Tech: Python, Pandas, Matplotlib, Seaborn.",
     code: "https://github.com/FameZeeshan/Hotelling-Seats-Booking.git",
     demo: "/images/Hotelling_Seats_System.html",
   },
   {
     title: "Swiggy Restaurant Data Visualization",
-    image: "/images/Swiggy Project Snap.jpg",
+    image: "/images/Swiggy Project Snap.webp",
     description:
       "This project analyzes the Swiggy restaurant dataset to uncover insights into restaurant distribution, pricing trends, customer ratings, delivery times, and food preferences across major Indian cities. Using Python with pandas and matplotlib, the study covers 8,680 restaurants across 9 cities and 833 areas. It highlights restaurant concentration in metros, regional pricing patterns, popular cuisines, and the correlation between delivery times and ratings. The insights have been visually validated, and key results are hard-coded in the functions for clear output.",
     code: "https://github.com/FameZeeshan/Swiggy-Data-Analytics.git",
@@ -47,123 +44,69 @@ Developed an automated data pipeline using Python (Pandas) to handle data extrac
   },
 ];
 
-const Projects: React.FC = () => (
-  <section id="projects" className="projects">
-    <div className="container">
-      <h2>Projects</h2>
-      <div className="project-list">
-        {projects.map((p, i) => (
-          <div className="project-card" key={i}>
-            <img src={p.image} alt={p.title} className="project-img" />
-            <h3>{p.title}</h3>
-            <p className="project-desc">{p.description}</p>
-            {p.badge && <div className="badge">{p.badge}</div>}
-            <div className="project-links">
-              {p.code && (
-                <a href={p.code} target="_blank" rel="noopener noreferrer">
-                  Code
-                </a>
-              )}
-              {p.demo && (
-                <a href={p.demo} target="_blank" rel="noopener noreferrer">
-                  Demo
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+const Projects: React.FC = () => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  return (
+    <section id="projects" className={styles.projects}>
+      <div className={styles.container}>
+        <h2>Projects</h2>
+        <div className={styles.projectList}>
+          {projects.map((p, i) => {
+            const isExpanded = expanded === i;
+            return (
+              <div className={styles.projectCard} key={i}>
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className={styles.projectImg}
+                />
+                <div className={styles.projectContent}>
+                  <h3>{p.title}</h3>
+                  <p
+                    className={`${styles.description} ${
+                      isExpanded ? styles.expanded : ""
+                    }`}
+                  >
+                    {p.description}
+                  </p>
+                  {p.description.length > 180 && (
+                    <button
+                      className={styles.readMore}
+                      onClick={() => setExpanded(isExpanded ? null : i)}
+                    >
+                      {isExpanded ? "Read Less" : "Read More"}
+                    </button>
+                  )}
+                  {p.badge && <span className={styles.badge}>{p.badge}</span>}
+                  <div className={styles.projectLinks}>
+                    {p.code && (
+                      <a
+                        href={p.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Code
+                      </a>
+                    )}
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Demo
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-    <style jsx>{`
-      .projects {
-        background: var(--color-bg);
-        padding: 20px 0;
-      }
-      .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 20px;
-      }
-      h2 {
-        text-align: center;
-        color: var(--color-primary);
-        font-size: 1.45rem;
-        font-weight: 600;
-      }
-      .project-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 22px;
-        margin-top: 2px;
-      }
-      .project-card {
-        background: var(--color-card);
-        color: var(--color-text);
-        border-radius: 14px;
-        box-shadow: 0 2px 10px rgba(54, 55, 149, 0.07);
-        padding: 27px 18px 18px 18px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        transition: background 0.3s, color 0.3s;
-      }
-      .project-img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 18px;
-        background: var(--color-bg);
-      }
-      h3 {
-        margin: 0 0 11px 0;
-        color: var(--color-primary);
-        font-size: 1.11rem;
-        font-weight: 600;
-      }
-      .project-desc {
-        font-size: 0.99rem;
-        margin-bottom: 8px;
-        color: var(--color-text);
-      }
-      .badge {
-        margin-bottom: 8px;
-        background: var(--color-accent);
-        color: var(--color-text);
-        font-size: 0.85rem;
-        padding: 3px 10px;
-        border-radius: 8px;
-        font-weight: bold;
-        box-shadow: 0 2px 8px rgba(255, 215, 0, 0.06);
-      }
-      .project-links {
-        margin-top: 10px;
-        display: flex;
-        gap: 16px;
-        width: 100%;
-      }
-      .project-links a {
-        color: var(--color-primary);
-        font-weight: 600;
-        background: var(--color-bg);
-        border-radius: 7px;
-        padding: 4px 12px;
-        text-decoration: none;
-        border: 1.5px solid var(--color-primary);
-        transition: background 0.21s, color 0.21s;
-      }
-      .project-links a:hover {
-        background: var(--color-primary);
-        color: var(--color-card);
-      }
-      @media (max-width: 700px) {
-        .container {
-          padding: 0 5px;
-        }
-        .project-list {
-          grid-template-columns: 1fr;
-        }
-      }
-    `}</style>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Projects;

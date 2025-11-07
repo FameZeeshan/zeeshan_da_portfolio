@@ -1,125 +1,103 @@
 "use client";
 import React from "react";
+import {
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaEnvelope,
+  FaLinkedin,
+  FaGithub,
+  FaMapMarkerAlt,
+  FaDownload,
+} from "react-icons/fa";
+import styles from "./Contact.module.css";
 
 const Contact: React.FC = () => (
-  <section id="contact" className="contact-section">
-    <div className="contact-card card">
-      <h2>Contact</h2>
-      <p>
-        <strong>Location</strong> Kundrathur, Chennai, India
-      </p>
-      <p>
-        <strong>Phone</strong>{" "}
-        <a href="tel:919884291490" style={{ color: "var(--color-link)" }}>
-          +91 9884291490
-        </a>
-      </p>
-      <p>
-        <strong>WhatsApp</strong>{" "}
-        <a
-          href="https://wa.me/919884291490"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#25D366" }}
-        >
-          +91 9884291490
-        </a>
-      </p>
-      <p>
-        <strong>Email</strong>{" "}
-        <a
-          href="mailto:zeeshan6143@gmail.com"
-          style={{ color: "var(--color-link)" }}
-        >
-          zeeshan6143@gmail.com
-        </a>
-      </p>
-      <p>
-        <strong>LinkedIn</strong>{" "}
-        <a
-          href="https://www.linkedin.com/in/famezeeshan"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "var(--color-link)" }}
-        >
-          https://www.linkedin.com/in/famezeeshan
-        </a>
-      </p>
-      <p>
-        <strong>GitHub</strong>{" "}
-        <a
-          href="https://github.com/FameZeeshan"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "var(--color-link)" }}
-        >
-          https://github.com/FameZeeshan
-        </a>
-      </p>
-      <a href="ZeeshanDA1025.pdf" id="resume" download>
-        <button>Download Resume</button>
-      </a>
+  <section id="contact" className={styles.contactSection}>
+    <div className={styles.contactCard}>
+      <h2 className={styles.title}>Contact</h2>
+
+      <div className={styles.contactGrid}>
+        {/* Left Column */}
+        <div className={styles.contactColumn}>
+          <p>
+            <FaMapMarkerAlt className={styles.icon} />
+            <span>
+              <strong>Location:</strong> Kundrathur, Chennai, India
+            </span>
+          </p>
+
+          <p>
+            <FaPhoneAlt className={styles.icon} />
+            <span>
+              <strong>Phone:</strong>{" "}
+              <a href="tel:919884291490">+91 9884291490</a>
+            </span>
+          </p>
+
+          <p>
+            <FaWhatsapp className={`${styles.icon} ${styles.whatsapp}`} />
+            <span>
+              <strong>WhatsApp:</strong>{" "}
+              <a
+                href="https://wa.me/919884291490"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +91 9884291490
+              </a>
+            </span>
+          </p>
+
+          <p>
+            <FaEnvelope className={styles.icon} />
+            <span>
+              <strong>Email:</strong>{" "}
+              <a href="mailto:zeeshan6143@gmail.com">zeeshan6143@gmail.com</a>
+            </span>
+          </p>
+        </div>
+
+        {/* Right Column */}
+        <div className={styles.contactColumn}>
+          <p>
+            <FaLinkedin className={`${styles.icon} ${styles.linkedin}`} />
+            <span>
+              <strong>LinkedIn:</strong>{" "}
+              <a
+                href="https://www.linkedin.com/in/famezeeshan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                linkedin.com/in/famezeeshan
+              </a>
+            </span>
+          </p>
+
+          <p>
+            <FaGithub className={`${styles.icon} ${styles.github}`} />
+            <span>
+              <strong>GitHub:</strong>{" "}
+              <a
+                href="https://github.com/FameZeeshan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/FameZeeshan
+              </a>
+            </span>
+          </p>
+
+          <div className={styles.resumeContainer}>
+            <a href="/ZeeshanDA1025.pdf" download>
+              <button className={styles.resumeBtn}>
+                <FaDownload className={styles.btnIcon} />
+                <span>Download Resume</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <style jsx>{`
-      .contact-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-      }
-      .contact-card {
-        background: var(--color-card);
-        color: var(--color-text);
-        border-radius: 18px;
-        box-shadow: 0 2px 18px rgba(62, 72, 105, 0.11);
-        padding: 38px 28px;
-        max-width: 1150px;
-        width: 100%;
-        margin: 20px auto 20px auto;
-        transition: background 0.3s, color 0.3s;
-        text-align: center;
-      }
-      h2 {
-        color: var(--color-primary);
-        margin-bottom: 20px;
-      }
-      p {
-        margin-bottom: 12px;
-        font-size: 1.05rem;
-      }
-      a {
-        color: var(--color-link);
-        text-decoration: none;
-        transition: color 0.16s;
-      }
-      a:visited {
-        color: var(--color-link-visited);
-      }
-      a:focus,
-      a:hover {
-        color: var(--color-link-hover);
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
-      }
-      button {
-        margin-top: 12px;
-        border-radius: 7px;
-        padding: 7px 18px;
-        background: var(--color-primary);
-        color: var(--color-card);
-        border: none;
-        transition: background 0.18s, color 0.18s;
-      }
-      button:hover {
-        background: var(--color-accent);
-        color: var(--color-text);
-      }
-      @media (max-width: 600px) {
-        .contact-card {
-          padding: 22px 8px;
-        }
-      }
-    `}</style>
   </section>
 );
 

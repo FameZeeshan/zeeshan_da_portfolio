@@ -1,6 +1,11 @@
+/* ============================================================
+   GLOBAL STYLES FOR ZEESHAN PORTFOLIO
+   ============================================================ */
+
+/* ---------- Light Theme Colors ---------- */
 :root {
   --color-bg: #f4f6fc;
-  --color-card: #fff;
+  --color-card: #ffffff;
   --color-text: #232942;
   --color-primary: #005c97;
   --color-secondary: #363795;
@@ -12,6 +17,7 @@
   --color-scrollbar-thumb: #abc4f6;
 }
 
+/* ---------- Dark Theme Colors ---------- */
 .dark {
   --color-bg: #1a2036;
   --color-card: #22253a;
@@ -26,6 +32,7 @@
   --color-scrollbar-thumb: #34415e;
 }
 
+/* ---------- Global Resets ---------- */
 html,
 body {
   min-height: 100%;
@@ -37,26 +44,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards; /* 👈 smooth instant render */
 }
 
+/* Fade-in animation for initial load */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Box Sizing ---------- */
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-}
-html {
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-  font-size: 1rem;
-}
-
+/* ---------- Links ---------- */
 a {
   color: var(--color-link);
   text-decoration: none;
-  transition: color 0.15s;
+  transition: color 0.15s ease;
 }
 a:visited {
   color: var(--color-link-visited);
@@ -64,11 +75,11 @@ a:visited {
 a:focus,
 a:hover {
   color: var(--color-link-hover);
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: none; /* removed blue focus border */
   text-decoration: none;
 }
 
+/* ---------- Buttons ---------- */
 button {
   font-family: inherit;
   border: none;
@@ -79,19 +90,21 @@ button {
   font-size: 1rem;
 }
 
+/* ---------- Lists ---------- */
 ul,
 ol {
   padding-left: 1.25em;
   margin: 0 0 1.2em 0;
 }
 
+/* ---------- Images ---------- */
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* Scrollbar styling */
+/* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar {
   width: 8px;
   background: var(--color-scrollbar-bg);
@@ -101,7 +114,7 @@ img {
   border-radius: 8px;
 }
 
-/* Responsive Typography for headings */
+/* ---------- Headings ---------- */
 h1,
 h2,
 h3 {
@@ -131,7 +144,7 @@ h3 {
   }
 }
 
-/* Utility classes */
+/* ---------- Utility Classes ---------- */
 .text-center {
   text-align: center;
 }
@@ -142,7 +155,7 @@ h3 {
   box-shadow: 0 2px 15px rgba(62, 72, 105, 0.12);
 }
 
-/* Card/section backgrounds and main container can use: */
+/* ---------- Common Section Cards ---------- */
 .main-container,
 .about-content,
 .exp-card,
@@ -151,5 +164,5 @@ h3 {
 .testimonial-card {
   background: var(--color-card);
   color: var(--color-text);
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
 }

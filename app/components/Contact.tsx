@@ -88,7 +88,7 @@ const Contact: React.FC = () => (
           </p>
 
           <div className={styles.resumeContainer}>
-            <a href="/ZeeshanDA1025.pdf" download>
+            <a href="Zeeshan_C_1125.pdf" download>
               <button className={styles.resumeBtn}>
                 <FaDownload className={styles.btnIcon} />
                 <span>Download Resume</span>

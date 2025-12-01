@@ -8,7 +8,7 @@ const Home: React.FC = () => (
     <div className={styles.container}>
       <div className={styles.profileWrapper}>
         <img
-          src="/images/Zeeshan.jpg"
+          src="/images/Zeeshan pic 1125.jpg"
           alt="profile"
           className={styles.profilePhoto}
         />

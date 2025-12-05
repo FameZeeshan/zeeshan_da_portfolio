@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
@@ -21,44 +22,44 @@ const Navbar: React.FC = () => {
         </button>
         <ul className={`nav-links${open ? " open" : ""}`}>
           <li>
-            <a href="#home" onClick={() => setOpen(false)}>
+            <Link href="#home" onClick={() => setOpen(false)}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#about" onClick={() => setOpen(false)}>
+            <Link href="#about" onClick={() => setOpen(false)}>
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#experience" onClick={() => setOpen(false)}>
+            <Link href="#experience" onClick={() => setOpen(false)}>
               Experience
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#projects" onClick={() => setOpen(false)}>
+            <Link href="#projects" onClick={() => setOpen(false)}>
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#skills" onClick={() => setOpen(false)}>
+            <Link href="#skills" onClick={() => setOpen(false)}>
               Skills
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#certifications" onClick={() => setOpen(false)}>
+            <Link href="#certifications" onClick={() => setOpen(false)}>
               Certifications
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" onClick={() => setOpen(false)}>
+            <Link href="#contact" onClick={() => setOpen(false)}>
               Contact
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#resume" onClick={() => setOpen(false)}>
+            <Link href="#resume" onClick={() => setOpen(false)}>
               Resume
-            </a>
+            </Link>
           </li>
         </ul>
         <ThemeToggle />

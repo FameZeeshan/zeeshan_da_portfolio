@@ -1,16 +1,20 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import styles from "./Home.module.css";
-import { FaEnvelope, FaWhatsapp, FaGithub, FaLinkedin } from "react-icons/fa";
+import { socialLinks } from "../data/socials";
 
 const Home: React.FC = () => (
   <section id="home" className={styles.home}>
     <div className={styles.container}>
       <div className={styles.profileWrapper}>
-        <img
+        <Image
           src="/images/Zeeshan pic 1125.jpg"
           alt="profile"
+          width={150}
+          height={150}
           className={styles.profilePhoto}
+          priority
         />
         <div className={styles.profileGlow}></div>
       </div>
@@ -23,49 +27,19 @@ const Home: React.FC = () => (
       </p>
 
       <div className={styles.iconRow}>
-        <a
-          href="mailto:zeeshan6143@gmail.com"
-          title="Email"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.iconLink} ${styles.email}`}
-        >
-          <FaEnvelope className={styles.icon} />
-          <span className={styles.iconLabel}>Email</span>
-        </a>
-
-        <a
-          href="https://wa.me/919884291490"
-          title="WhatsApp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.iconLink} ${styles.whatsapp}`}
-        >
-          <FaWhatsapp className={styles.icon} />
-          <span className={styles.iconLabel}>WhatsApp</span>
-        </a>
-
-        <a
-          href="https://github.com/FameZeeshan"
-          title="GitHub"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.iconLink} ${styles.github}`}
-        >
-          <FaGithub className={styles.icon} />
-          <span className={styles.iconLabel}>GitHub</span>
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/famezeeshan/"
-          title="LinkedIn"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${styles.iconLink} ${styles.linkedin}`}
-        >
-          <FaLinkedin className={styles.icon} />
-          <span className={styles.iconLabel}>LinkedIn</span>
-        </a>
+        {socialLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            title={link.name}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.iconLink} ${styles[link.className]}`}
+          >
+            <link.icon className={styles.icon} />
+            <span className={styles.iconLabel}>{link.name}</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>

@@ -1,6 +1,6 @@
 export const impactStats = [
-    "90% Less Manual Work",
-    "40+ Hours Saved/Month",
-    "3 Automation Pipelines",
-    "5,000 Records/Month",
+    "Up to 90% Reduction in Manual Reporting Effort",
+    "40+ Hours Saved Every Month",
+    "Multiple Production-Grade Automation Pipelines",
+    "5,000+ Billing Records Processed Monthly",
 ];

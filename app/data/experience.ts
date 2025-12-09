@@ -7,16 +7,17 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
     {
-        title: "Associate Manager – Capacity Planner",
+        title: "Associate Manager – Capacity Planning",
         company: "Sutherland Global Services, Chennai",
         duration: "Sep 2020 – Present",
         description: [
-            "Lead strategic seating capacity planning and allocation across multiple programs and offices.",
-            "Transform manual, Excel-based processes into automated data-driven solutions using Python, Pandas, Power Query, and advanced Excel.",
-            "Built automated Global Capacity Dashboard integrating seat requirement and capacity data for leadership reporting.",
-            "Designed automated seat billing and FPNA reporting system, reducing manual effort by 90% and improving monthly cycles.",
-            "Developed Hoteling Seat Allocation Tracker and visual dashboards for occupancy trends and booking validation.",
-            "Provide advanced business analysis and reporting using Excel, Power Query, VBA, Power BI, and data-driven decision-making frameworks.",
+            "Analyze multi-location capacity datasets and operational reporting data to support planning and decision-making.",
+            "Automate manual Excel workflows using Python (Pandas), Power Query, VBA, and Advanced Excel.",
+            "Develop reusable scripts for data cleaning, transformation, validation, and structured reporting.",
+            "Implemented Generative AI–assisted automation to accelerate documentation, reporting logic, and workflow development.",
+            "Built the Automated Global Capacity Dashboard using Python and Excel integration, improving accuracy and reporting speed.",
+            "Created automated billing validation workflows processing 5,000+ monthly records with ~90% manual effort reduction.",
+            "Developed the Hoteling Seat Allocation Tracker with occupancy insights and conflict-detection logic for multi-city usage.",
         ],
     },
     {
@@ -24,22 +25,22 @@ export const experiences: ExperienceItem[] = [
         company: "Saman Exports, Chennai",
         duration: "Feb 2019 – Sep 2021",
         description: [
-            "Managed production operations from planning to dispatch, ensuring workflow efficiency and timely output.",
-            "Supervised production and quality teams to maintain high product standards.",
-            "Oversaw procurement and managed material inventory to meet production schedules.",
-            "Maintained compliance with safety and industry standards.",
-            "Ensured timely delivery of finished goods to clients as per deadlines and requirements.",
+            "Oversaw daily production workflow and ensured smooth operations from planning to dispatch.",
+            "Coordinated production and quality teams to maintain product consistency and manufacturing standards.",
+            "Managed procurement and inventory of raw materials, preventing delays and optimizing resource availability.",
+            "Ensured full compliance with quality, safety, and operational guidelines across the production floor.",
+            "Maintained timely delivery of finished goods based on client deadlines and quality expectations.",
         ],
     },
     {
-        title: "Public Relation Officer",
+        title: "Public Relations Officer",
         company: "Marshal Travel LLC, Dubai",
         duration: "Oct 2016 – Nov 2018",
         description: [
-            "Coordinated visa processing for company employees and tourists in Dubai, liaising with UAE immigration authorities.",
-            "Managed sensitive documentation and ensured timely approvals and issue resolution.",
-            "Provided high standards of customer service in a fast-paced and multicultural environment.",
-            "Maintained strong communication with internal teams and external stakeholders.",
+            "Managed visa documentation and processing for employees and tourists in coordination with UAE immigration authorities.",
+            "Ensured timely approvals, issue resolution, and accurate handling of sensitive case-related documentation.",
+            "Delivered high-quality customer service in a fast-paced and multicultural work environment.",
+            "Maintained clear communication with internal teams and external stakeholders throughout the visa process.",
         ],
     },
     {
@@ -47,9 +48,9 @@ export const experiences: ExperienceItem[] = [
         company: "Macks Productions, Chennai",
         duration: "Jun 2020",
         description: [
-            "Collaborated with developers and designers to deliver responsive websites.",
-            "Worked on requirement analysis, design, implementation, testing, and deployment.",
-            "Learned industry best practices in full-cycle web development.",
+            "Worked with developers and designers to build responsive, user-friendly websites.",
+            "Assisted in requirement analysis, UI design, implementation, testing, and deployment workflows.",
+            "Learned and applied industry best practices in full-cycle web development.",
         ],
     },
 ];

@@ -26,8 +26,7 @@ const Home: React.FC = () => (
         Data Analyst • Chennai, India
       </p>
       <p className="max-w-2xl mb-10 text-lg leading-relaxed text-foreground/80 md:text-xl">
-        Curious and relentlessly eager to learn, I thrive at turning raw data
-        into business insights and process automation.
+        Analytical and process-driven professional with 8 years of experience in data analysis, automation, reporting, and operational problem-solving. I specialize in transforming manual workflows into scalable, automated solutions using Python, Pandas, Power Query, Excel, and Generative AI assisted automation.
       </p>
 
       {/* Social Icons */}

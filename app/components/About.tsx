@@ -8,87 +8,66 @@ const About: React.FC = () => (
 
       <div className="p-6 transition-all duration-300 shadow-lg bg-card rounded-2xl md:p-8 hover:shadow-xl text-foreground">
         <p className="mb-6 text-lg font-medium leading-relaxed text-secondary md:text-xl">
-          I'm an <strong>Associate Manager - Capacity Planner</strong> at
-          Sutherland Global Services with 4+ years of operational experience.
-          I'm actively transitioning into a{" "}
-          <strong className="text-primary">full-time Data Analyst role</strong> by developing expertise
-          in{" "}
-          <strong className="text-primary">
-            Python, Pandas, VBA, data automation, and Generative AI tools
-          </strong>
-          .
+          I'm an <strong>Associate Manager – Capacity Planning</strong> at Sutherland Global Services with
+          <strong className="text-primary"> 8 years</strong> of experience spanning data analysis, reporting automation,
+          and operational analytics. I specialize in transforming manual, Excel-heavy workflows into scalable,
+          automated solutions using <strong className="text-primary">Python (Pandas), Power Query, VBA, and Advanced Excel</strong>,
+          and I apply <strong className="text-primary">Generative AI–assisted automation</strong> to accelerate documentation,
+          validation, and reporting logic.
         </p>
 
-        <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">My Journey to Data Analytics</h3>
+        <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">My Journey to Data & Automation</h3>
         <p className="mb-6 text-base leading-relaxed md:text-lg">
-          While managing capacity planning operations, I discovered the power of
-          data-driven automation. Frustrated by manual Excel-based reporting
-          that consumed hours each week, I took the initiative to learn Python
-          and built automated solutions using Pandas. This hands-on experience
-          transformed my approach to business challenges and sparked my passion
-          for dedicated, impactful data analytics.
+          While managing capacity planning operations, I saw the opportunity to use data and automation to remove heavy
+          manual effort. I learned Python and built production-grade ETL and reporting pipelines that replaced repetitive
+          Excel tasks and improved data quality. This hands-on work shaped my approach to business problems and motivated
+          my transition into analytics and process automation.
         </p>
         <p className="mb-6 text-base leading-relaxed md:text-lg">
-          Today, I actively leverage{" "}
-          <strong className="text-primary">Generative AI (such as ChatGPT & Copilot)</strong>
-          to generate code, test solutions, and quickly iterate for business
-          needs. These tools help me accelerate development, automate more
-          effectively, and ensure my solutions are robust and adaptable.
+          I regularly apply <strong className="text-primary">Generative AI–assisted automation</strong> to speed up code iteration,
+          draft documentation and business logic, and validate reporting rules — while ensuring final solutions remain robust
+          and auditable.
         </p>
 
         <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">What I Bring to the Table</h3>
         <div className="grid grid-cols-1 gap-4 my-6 md:grid-cols-2 lg:grid-cols-4">
           <SkillBox title="💻 Technical Skills">
-            Python, Pandas, SQL, Excel, Power BI, VBA, Generative AI—practical
-            tools I use to solve real business problems and automate workflows.
+            Python, Pandas, Power Query, Advanced Excel, VBA, ETL workflows, Data Cleaning, EDA, Power BI (beginner), SQL (learning).
           </SkillBox>
           <SkillBox title="🔄 Process Automation">
-            Built 3 production-grade ETL pipelines that eliminate 90% of
-            manual reporting efforts, applying AI-assisted code generation for
-            faster and more accurate automation.
+            Built multiple production-grade ETL and reporting pipelines that reduced manual reporting effort by up to 90% and improved consistency.
+            Applied Generative AI–assisted automation to accelerate documentation and logic development while maintaining validation checks.
           </SkillBox>
-          <SkillBox title="📊 Data-Driven Decision Making">
-            Transform complex operational data into actionable insights for
-            stakeholders, driving timely and informed decisions.
+          <SkillBox title="📊 Data & Reporting">
+            Transform complex operational datasets into clear, leadership-ready insights, dashboards, and Excel reports to support decision-making.
           </SkillBox>
           <SkillBox title="🎯 Operational Expertise">
-            4+ years managing capacity planning, process optimization, and
-            cross-functional teams, consistently improving efficiency using
-            data and automation.
+            Hands-on experience in capacity analytics, reporting support, workflow optimization, and cross-functional stakeholder collaboration.
           </SkillBox>
         </div>
 
         <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">Key Achievements</h3>
         <ul className="pl-6 my-6 space-y-3 list-disc text-foreground md:text-lg">
           <li>
-            <strong className="text-primary">Automated Production Pipelines:</strong> Built AI-assisted
-            Python/Pandas solutions that reduced manual reporting by 90% and
-            improved accuracy to 98%.
+            <strong className="text-primary">Automation Impact:</strong> Developed Python/Pandas pipelines and Excel automation that reduced manual effort by up to <strong>~90%</strong>.
           </li>
           <li>
-            <strong className="text-primary">Daily Data Processing:</strong> Processed 1000+ billing
-            records monthly through automated validation and reconciliation
-            workflows.
+            <strong className="text-primary">High-volume Processing:</strong> Built billing validation workflows processing <strong>5,000+ records per month</strong> with improved accuracy.
           </li>
           <li>
-            <strong className="text-primary">Generative AI Adoption:</strong> Use Generative AI tools to
-            generate, test, and refine code—speeding up development cycles and
-            enhancing solution reliability.
+            <strong className="text-primary">Generative AI–Assisted Automation:</strong> Use Generative AI methods to speed development of documentation, testing scaffolds, and validation logic—while retaining rigorous manual checks.
           </li>
           <li>
-            <strong className="text-primary">Time Savings:</strong> Automated solutions save 40+ hours
-            per month previously spent on manual data entry and reporting.
+            <strong className="text-primary">Time Savings:</strong> Delivered automation that saves <strong>40+ hours per month</strong> previously spent on manual data entry and reporting.
           </li>
           <li>
-            <strong className="text-primary">Real Business Impact:</strong> Automation efforts improved
-            decision-making speed for capacity planning and resource allocation.
+            <strong className="text-primary">Business Outcomes:</strong> Automation and reporting improvements led to faster, more reliable leadership decisions for planning and reporting activities.
           </li>
         </ul>
 
         <p className="mt-8 pl-4 border-l-4 border-accent italic text-secondary md:text-lg">
-          I'm actively seeking a <strong className="text-primary">Data Analyst position</strong> to apply
-          my technical skills, analytical mindset, and operational knowledge to
-          drive data-informed business decisions at scale.
+          I am open to roles as a <strong className="text-primary">Data Analyst, Business Analyst, or Client Relations / Reporting Analyst</strong>,
+          where I can apply analytics, automation, and stakeholder collaboration to deliver measurable impact.
         </p>
       </div>
     </div>

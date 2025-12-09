@@ -4,6 +4,7 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -30,8 +31,8 @@ const Navbar: React.FC = () => {
     <>
       <nav
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled || open
-            ? "bg-background/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm"
-            : "bg-transparent border-b border-transparent"
+          ? "bg-background/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm"
+          : "bg-transparent border-b border-transparent"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,9 +41,13 @@ const Navbar: React.FC = () => {
             <div className="flex-shrink-0 z-50">
               <Link
                 href="#home"
-                className="text-2xl font-bold text-primary dark:text-accent tracking-wide hover:opacity-80 transition-opacity"
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                aria-label="Home"
               >
-                Zeeshan
+                <Logo className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                <span className="text-xl font-bold tracking-wide text-primary dark:text-accent hidden sm:block">
+                  Zeeshan
+                </span>
               </Link>
             </div>
 

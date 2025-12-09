@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
                   .map((skill, idx) => (
                     <div
                       key={idx}
-                      className="px-4 py-2 text-sm font-medium transition-all duration-200 border rounded-full bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-primary/20 text-foreground hover:border-accent hover:text-primary hover:shadow-sm hover:-translate-y-0.5 cursor-default"
+                      className="px-4 py-2 text-sm font-medium transition-all duration-200 border rounded-full bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-primary/20 text-gray-800 dark:text-gray-100 hover:border-accent hover:text-primary dark:hover:text-accent hover:shadow-sm hover:-translate-y-0.5 cursor-default"
                     >
                       {skill.name}
                     </div>

@@ -1,327 +1,166 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [open]);
 
   return (
-    <nav className="navbar">
-      <div className="nav-content">
-        <div className="nav-brand">Zeeshan</div>
-        <button
-          className={`nav-toggle${open ? " open" : ""}`}
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul className={`nav-links${open ? " open" : ""}`}>
-          <li>
-            <Link href="#home" onClick={() => setOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="#about" onClick={() => setOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="#experience" onClick={() => setOpen(false)}>
-              Experience
-            </Link>
-          </li>
-          <li>
-            <Link href="#projects" onClick={() => setOpen(false)}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="#skills" onClick={() => setOpen(false)}>
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link href="#certifications" onClick={() => setOpen(false)}>
-              Certifications
-            </Link>
-          </li>
-          <li>
-            <Link href="#contact" onClick={() => setOpen(false)}>
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link href="#resume" onClick={() => setOpen(false)}>
-              Resume
-            </Link>
-          </li>
-        </ul>
-        <ThemeToggle />
-        {open && <div className="nav-overlay" onClick={() => setOpen(false)} />}
-      </div>
-      <style jsx>{`
-        .navbar {
-          background: linear-gradient(90deg, #005c97 0%, #363795 100%);
-          box-shadow: 0 4px 24px rgba(54, 55, 149, 0.09);
-          position: sticky;
-          top: 0;
-          z-index: 99;
-          width: 100%;
-          overflow-x: hidden;
-          transition: background 0.3s ease;
-        }
-        .dark .navbar {
-          background: linear-gradient(90deg, #0d1b2a 0%, #16213e 100%);
-        }
-        .nav-content {
-          max-width: 100%;
-          padding: 0 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 60px;
-          position: relative;
-          gap: 16px;
-        }
-        .nav-brand {
-          color: #ffd700;
-          font-weight: 700;
-          font-size: 1.32rem;
-          letter-spacing: 0.04em;
-          min-width: fit-content;
-          flex-shrink: 0;
-          transition: color 0.3s ease;
-        }
-        .dark .nav-brand {
-          color: #ffe066;
-        }
-        .nav-toggle {
-          display: none;
-          background: none;
-          border: none;
-          cursor: pointer;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: 36px;
-          width: 36px;
-          margin-left: auto;
-          padding: 0;
-          z-index: 101;
-          outline: none;
-        }
-        .nav-toggle:focus {
-          outline: none;
-        }
-        .nav-toggle span {
-          display: block;
-          background: #fff;
-          height: 4px;
-          width: 25px;
-          margin: 5px 0;
-          border-radius: 3px;
-          transition: all 0.3s ease;
-          transform-origin: center;
-        }
-        .nav-toggle span:nth-child(2) {
-          width: 20px;
-        }
-        /* Hamburger animation */
-        .nav-toggle.open span:nth-child(1) {
-          transform: rotate(45deg) translate(8px, 8px);
-        }
-        .nav-toggle.open span:nth-child(2) {
-          opacity: 0;
-        }
-        .nav-toggle.open span:nth-child(3) {
-          transform: rotate(-45deg) translate(8px, -8px);
-          width: 25px;
-        }
+    <>
+      <nav
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled || open
+            ? "bg-background/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm"
+            : "bg-transparent border-b border-transparent"
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex-shrink-0 z-50">
+              <Link
+                href="#home"
+                className="text-2xl font-bold text-primary dark:text-accent tracking-wide hover:opacity-80 transition-opacity"
+              >
+                Zeeshan
+              </Link>
+            </div>
 
-        ul.nav-links {
-          list-style: none;
-          display: flex;
-          gap: 2rem;
-          margin: 0;
-          padding: 0;
-          align-items: center;
-          flex-wrap: nowrap;
-          justify-content: flex-end;
-        }
-        ul.nav-links li a {
-          color: #fff;
-          text-decoration: none;
-          font-weight: 500;
-          font-size: 1.05rem;
-          letter-spacing: 0.03em;
-          transition: color 0.2s, background 0.2s;
-          padding: 6px 12px;
-          border-radius: 5px;
-          display: inline-block;
-          white-space: nowrap;
-        }
-        ul.nav-links li a:hover,
-        ul.nav-links li a:focus {
-          color: #ffd700;
-          background: rgba(255, 255, 255, 0.12);
-        }
-        .dark ul.nav-links li a:hover,
-        .dark ul.nav-links li a:focus {
-          color: #ffe066;
-        }
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8">
+              <DesktopLink href="#home">Home</DesktopLink>
+              <DesktopLink href="#about">About</DesktopLink>
+              <DesktopLink href="#experience">Experience</DesktopLink>
+              <DesktopLink href="#projects">Projects</DesktopLink>
+              <DesktopLink href="#skills">Skills</DesktopLink>
+              <DesktopLink href="#certifications">Certifications</DesktopLink>
+              <DesktopLink href="#contact">Contact</DesktopLink>
+              <div className="pl-4 border-l border-gray-200 dark:border-gray-700">
+                <ThemeToggle />
+              </div>
+            </div>
 
-        /* Desktop Large (1200px+) */
-        @media (min-width: 1200px) {
-          .nav-content {
-            padding: 0 32px;
-            height: 62px;
-            gap: 20px;
-          }
-          ul.nav-links {
-            gap: 2.4rem;
-          }
-          ul.nav-links li a {
-            font-size: 1.08rem;
-            padding: 8px 14px;
-          }
-        }
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-4 z-50">
+              <ThemeToggle />
+              <button
+                onClick={() => setOpen(!open)}
+                className="p-2 rounded-md text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                {open ? (
+                  <HiX size={28} className="transition-transform duration-300 rotate-90" />
+                ) : (
+                  <HiOutlineMenuAlt3 size={28} className="transition-transform duration-300" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-        /* Desktop Medium (992px - 1199px) */
-        @media (max-width: 1199px) and (min-width: 992px) {
-          .nav-content {
-            padding: 0 20px;
-            height: 58px;
-          }
-          ul.nav-links {
-            gap: 1.6rem;
-          }
-          ul.nav-links li a {
-            font-size: 0.95rem;
-            padding: 5px 10px;
-          }
-        }
+      {/* Mobile Menu Overlay & Panel */}
+      <AnimatePresence>
+        {open && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={() => setOpen(false)}
+            />
 
-        /* Tablet (768px - 991px) - HAMBURGER STARTS HERE */
-        @media (max-width: 991px) {
-          .nav-toggle {
-            display: flex;
-          }
-          .nav-content {
-            padding: 0 14px;
-            height: 56px;
-          }
-          .nav-brand {
-            font-size: 1.2rem;
-          }
-          ul.nav-links {
-            position: fixed;
-            top: 56px;
-            left: 0;
-            width: 100vw;
-            height: auto;
-            max-height: calc(100vh - 56px);
-            background: linear-gradient(90deg, #005c97 0%, #363795 100%);
-            flex-direction: column;
-            gap: 0;
-            padding: 12px 8px 16px 8px;
-            display: none;
-            box-shadow: 0 5px 32px rgba(54, 55, 149, 0.11);
-            overflow-y: auto;
-            border-bottom: 2px solid #ffd700;
-            z-index: 98;
-            justify-content: flex-start;
-            align-items: stretch;
-            transition: background 0.3s ease;
-          }
-          .dark ul.nav-links {
-            background: linear-gradient(90deg, #0d1b2a 0%, #16213e 100%);
-          }
-          ul.nav-links.open {
-            display: flex;
-          }
-          ul.nav-links li {
-            width: 100%;
-          }
-          ul.nav-links li a {
-            font-size: 1.02rem;
-            padding: 14px 12px;
-            width: 100%;
-            text-align: left;
-            display: block;
-            border-radius: 5px;
-            margin-bottom: 4px;
-          }
-          ul.nav-links li a:hover {
-            background: rgba(255, 255, 255, 0.15);
-          }
-          .nav-overlay {
-            background: rgba(0, 0, 0, 0.3);
-            position: fixed;
-            top: 56px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 97;
-          }
-        }
+            {/* Menu Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 z-50 h-[100dvh] w-[80%] max-w-xs bg-background shadow-2xl md:hidden border-l border-gray-200 dark:border-gray-800 flex flex-col"
+            >
+              <div className="flex flex-col h-full pt-20 pb-8 px-6 overflow-y-auto">
+                <nav className="flex flex-col space-y-2">
+                  {["Home", "About", "Experience", "Projects", "Skills", "Certifications", "Contact"].map((item, idx) => (
+                    <motion.div
+                      key={item}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + idx * 0.05 }}
+                    >
+                      <MobileLink
+                        href={`#${item.toLowerCase()}`}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item}
+                      </MobileLink>
+                    </motion.div>
+                  ))}
+                </nav>
 
-        /* Small Mobile (600px - 767px) */
-        @media (max-width: 767px) {
-          .nav-content {
-            padding: 0 10px;
-            height: 54px;
-          }
-          .nav-brand {
-            font-size: 1.12rem;
-          }
-          .nav-toggle {
-            width: 32px;
-            height: 32px;
-          }
-          ul.nav-links {
-            top: 54px;
-            max-height: calc(100vh - 54px);
-            padding: 10px 6px 14px 6px;
-          }
-          ul.nav-links li a {
-            font-size: 0.98rem;
-            padding: 12px 10px;
-          }
-          .nav-overlay {
-            top: 54px;
-          }
-        }
-
-        /* Extra Small Mobile (below 600px) */
-        @media (max-width: 599px) {
-          .nav-content {
-            padding: 0 8px;
-            height: 52px;
-          }
-          .nav-brand {
-            font-size: 1.08rem;
-          }
-          ul.nav-links {
-            top: 52px;
-            max-height: calc(100vh - 52px);
-          }
-          ul.nav-links li a {
-            font-size: 0.96rem;
-            padding: 10px 8px;
-          }
-          .nav-overlay {
-            top: 52px;
-          }
-        }
-      `}</style>
-    </nav>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="mt-auto pt-8 border-t border-gray-100 dark:border-gray-800"
+                >
+                  <a
+                    href="Zeeshan_C_1125.pdf"
+                    download
+                    className="flex items-center justify-center w-full px-4 py-3 bg-primary text-white rounded-xl font-medium shadow-md hover:bg-primary/90 transition-colors"
+                  >
+                    Download Resume
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
+
+// Helper Components
+const DesktopLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <Link
+    href={href}
+    className="text-sm font-medium text-foreground/80 hover:text-primary dark:hover:text-accent transition-colors duration-200"
+  >
+    {children}
+  </Link>
+);
+
+const MobileLink = ({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) => (
+  <Link
+    href={href}
+    onClick={onClick}
+    className="block px-4 py-3 rounded-xl text-lg font-medium text-foreground/90 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-primary hover:pl-6 transition-all duration-200"
+  >
+    {children}
+  </Link>
+);
 
 export default Navbar;

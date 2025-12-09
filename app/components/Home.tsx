@@ -1,32 +1,37 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import styles from "./Home.module.css";
 import { socialLinks } from "../data/socials";
 
 const Home: React.FC = () => (
-  <section id="home" className={styles.home}>
-    <div className={styles.container}>
-      <div className={styles.profileWrapper}>
+  <section id="home" className="flex flex-col items-center justify-center min-h-[calc(100vh-60px)] py-10 bg-background md:py-16">
+    <div className="container flex flex-col items-center max-w-4xl px-4 text-center">
+      {/* Profile Image Wrapper */}
+      <div className="relative mb-8 group">
+        <div className="absolute inset-0 transition-opacity duration-300 rounded-full opacity-75 animate-pulse bg-gradient-to-r from-primary to-secondary blur-xl group-hover:opacity-100"></div>
         <Image
           src="/images/Zeeshan pic 1125.jpg"
-          alt="profile"
-          width={150}
-          height={150}
-          className={styles.profilePhoto}
+          alt="Mohammed Zeeshan - Data Analyst"
+          width={180}
+          height={180}
+          className="relative z-10 border-4 border-white rounded-full shadow-2xl dark:border-gray-800"
           priority
         />
-        <div className={styles.profileGlow}></div>
       </div>
 
-      <h1>Mohammed Zeeshan</h1>
-      <p className={styles.title}>Data Analyst • Chennai, India</p>
-      <p className={styles.tagline}>
+      <h1 className="mb-4 text-4xl font-bold tracking-tight text-primary md:text-6xl">
+        Mohammed Zeeshan
+      </h1>
+      <p className="mb-6 text-xl font-medium text-secondary md:text-2xl">
+        Data Analyst • Chennai, India
+      </p>
+      <p className="max-w-2xl mb-10 text-lg leading-relaxed text-foreground/80 md:text-xl">
         Curious and relentlessly eager to learn, I thrive at turning raw data
         into business insights and process automation.
       </p>
 
-      <div className={styles.iconRow}>
+      {/* Social Icons */}
+      <div className="flex flex-wrap justify-center gap-6">
         {socialLinks.map((link) => (
           <a
             key={link.name}
@@ -34,10 +39,12 @@ const Home: React.FC = () => (
             title={link.name}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.iconLink} ${styles[link.className]}`}
+            className="flex items-center gap-2 px-5 py-3 transition-all duration-300 rounded-full shadow-sm bg-card hover:shadow-lg hover:-translate-y-1 group"
           >
-            <link.icon className={styles.icon} />
-            <span className={styles.iconLabel}>{link.name}</span>
+            <link.icon className="text-2xl text-primary transition-colors group-hover:text-accent" />
+            <span className="font-medium text-foreground group-hover:text-primary">
+              {link.name}
+            </span>
           </a>
         ))}
       </div>

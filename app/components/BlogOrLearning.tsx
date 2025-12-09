@@ -1,43 +1,21 @@
 "use client";
 import React from "react";
+
 const BlogOrLearning: React.FC = () => (
-  <section className="blog-learning">
-    <h2>What I'm Learning & Writing</h2>
-    <ul>
-      <li>
-        <strong>Case Study</strong> How Python Automation Saved 40+ Hours/Month
-        <span style={{ color: "var(--color-primary)" }}> Coming Soon</span>
-      </li>
-      <li>
-        <strong>In Progress</strong> Mastering Advanced SQL and Machine Learning
-        Fundamentals
-      </li>
-    </ul>
-    <style jsx>{`
-      .blog-learning {
-        background: var(--color-card);
-        max-width: 700px;
-        margin: 40px auto 32px auto;
-        border-radius: 15px;
-        padding: 28px 22px;
-        box-shadow: 0 1px 7px rgba(62, 72, 105, 0.12);
-      }
-      h2 {
-        color: var(--color-primary);
-        text-align: center;
-        margin-bottom: 15px;
-        font-size: 1.17rem;
-      }
-      ul {
-        color: var(--color-secondary);
-        font-size: 1.03rem;
-        margin: 0;
-        padding: 0 0 0 18px;
-      }
-      li {
-        margin-bottom: 12px;
-      }
-    `}</style>
+  <section className="py-10 bg-background">
+    <div className="w-full max-w-3xl px-6 py-8 mx-auto transition-transform duration-300 shadow-sm bg-card rounded-2xl hover:shadow-md border border-gray-100 dark:border-gray-800">
+      <h2 className="mb-6 text-2xl font-bold text-center text-primary md:text-3xl">What I'm Learning & Writing</h2>
+      <ul className="pl-5 space-y-4 list-disc text-secondary md:text-lg">
+        <li>
+          <strong className="text-foreground">Case Study:</strong> How Python Automation Saved 40+ Hours/Month
+          <span className="ml-2 text-sm font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Coming Soon</span>
+        </li>
+        <li>
+          <strong className="text-foreground">In Progress:</strong> Mastering Advanced SQL and Machine Learning Fundamentals
+        </li>
+      </ul>
+    </div>
   </section>
 );
+
 export default BlogOrLearning;

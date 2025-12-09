@@ -2,23 +2,25 @@
 import React from "react";
 
 const About: React.FC = () => (
-  <section id="about" className="about">
-    <div className="container">
-      <h2>About Me</h2>
-      <div className="about-content">
-        <p className="intro">
+  <section id="about" className="py-10 bg-background">
+    <div className="w-full max-w-6xl px-4 mx-auto md:px-6">
+      <h2 className="mb-8 text-2xl font-semibold text-center text-primary md:text-3xl">About Me</h2>
+
+      <div className="p-6 transition-all duration-300 shadow-lg bg-card rounded-2xl md:p-8 hover:shadow-xl text-foreground">
+        <p className="mb-6 text-lg font-medium leading-relaxed text-secondary md:text-xl">
           I'm an <strong>Associate Manager - Capacity Planner</strong> at
           Sutherland Global Services with 4+ years of operational experience.
           I'm actively transitioning into a{" "}
-          <strong>full-time Data Analyst role</strong> by developing expertise
+          <strong className="text-primary">full-time Data Analyst role</strong> by developing expertise
           in{" "}
-          <strong>
+          <strong className="text-primary">
             Python, Pandas, VBA, data automation, and Generative AI tools
           </strong>
           .
         </p>
-        <h3>My Journey to Data Analytics</h3>
-        <p>
+
+        <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">My Journey to Data Analytics</h3>
+        <p className="mb-6 text-base leading-relaxed md:text-lg">
           While managing capacity planning operations, I discovered the power of
           data-driven automation. Frustrated by manual Excel-based reporting
           that consumed hours each week, I took the initiative to learn Python
@@ -26,233 +28,78 @@ const About: React.FC = () => (
           transformed my approach to business challenges and sparked my passion
           for dedicated, impactful data analytics.
         </p>
-        <p>
+        <p className="mb-6 text-base leading-relaxed md:text-lg">
           Today, I actively leverage{" "}
-          <strong>Generative AI (such as ChatGPT & Copilot)</strong>
+          <strong className="text-primary">Generative AI (such as ChatGPT & Copilot)</strong>
           to generate code, test solutions, and quickly iterate for business
           needs. These tools help me accelerate development, automate more
           effectively, and ensure my solutions are robust and adaptable.
         </p>
-        <h3>What I Bring to the Table</h3>
-        <div className="skills-highlight">
-          <div className="skill-box">
-            <h4>💻 Technical Skills</h4>
-            <p>
-              Python, Pandas, SQL, Excel, Power BI, VBA, Generative AI—practical
-              tools I use to solve real business problems and automate
-              workflows.
-            </p>
-          </div>
-          <div className="skill-box">
-            <h4>🔄 Process Automation</h4>
-            <p>
-              Built 3 production-grade ETL pipelines that eliminate 90% of
-              manual reporting efforts, applying AI-assisted code generation for
-              faster and more accurate automation.
-            </p>
-          </div>
-          <div className="skill-box">
-            <h4>📊 Data-Driven Decision Making</h4>
-            <p>
-              Transform complex operational data into actionable insights for
-              stakeholders, driving timely and informed decisions.
-            </p>
-          </div>
-          <div className="skill-box">
-            <h4>🎯 Operational Expertise</h4>
-            <p>
-              4+ years managing capacity planning, process optimization, and
-              cross-functional teams, consistently improving efficiency using
-              data and automation.
-            </p>
-          </div>
+
+        <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">What I Bring to the Table</h3>
+        <div className="grid grid-cols-1 gap-4 my-6 md:grid-cols-2 lg:grid-cols-4">
+          <SkillBox title="💻 Technical Skills">
+            Python, Pandas, SQL, Excel, Power BI, VBA, Generative AI—practical
+            tools I use to solve real business problems and automate workflows.
+          </SkillBox>
+          <SkillBox title="🔄 Process Automation">
+            Built 3 production-grade ETL pipelines that eliminate 90% of
+            manual reporting efforts, applying AI-assisted code generation for
+            faster and more accurate automation.
+          </SkillBox>
+          <SkillBox title="📊 Data-Driven Decision Making">
+            Transform complex operational data into actionable insights for
+            stakeholders, driving timely and informed decisions.
+          </SkillBox>
+          <SkillBox title="🎯 Operational Expertise">
+            4+ years managing capacity planning, process optimization, and
+            cross-functional teams, consistently improving efficiency using
+            data and automation.
+          </SkillBox>
         </div>
-        <h3>Key Achievements</h3>
-        <ul className="achievements">
+
+        <h3 className="mt-8 mb-4 text-xl font-semibold text-primary md:text-2xl">Key Achievements</h3>
+        <ul className="pl-6 my-6 space-y-3 list-disc text-foreground md:text-lg">
           <li>
-            <strong>Automated Production Pipelines:</strong> Built AI-assisted
+            <strong className="text-primary">Automated Production Pipelines:</strong> Built AI-assisted
             Python/Pandas solutions that reduced manual reporting by 90% and
             improved accuracy to 98%.
           </li>
           <li>
-            <strong>Daily Data Processing:</strong> Processed 1000+ billing
+            <strong className="text-primary">Daily Data Processing:</strong> Processed 1000+ billing
             records monthly through automated validation and reconciliation
             workflows.
           </li>
           <li>
-            <strong>Generative AI Adoption:</strong> Use Generative AI tools to
+            <strong className="text-primary">Generative AI Adoption:</strong> Use Generative AI tools to
             generate, test, and refine code—speeding up development cycles and
             enhancing solution reliability.
           </li>
           <li>
-            <strong>Time Savings:</strong> Automated solutions save 40+ hours
+            <strong className="text-primary">Time Savings:</strong> Automated solutions save 40+ hours
             per month previously spent on manual data entry and reporting.
           </li>
           <li>
-            <strong>Real Business Impact:</strong> Automation efforts improved
+            <strong className="text-primary">Real Business Impact:</strong> Automation efforts improved
             decision-making speed for capacity planning and resource allocation.
           </li>
         </ul>
-        <p className="closing">
-          I'm actively seeking a <strong>Data Analyst position</strong> to apply
+
+        <p className="mt-8 pl-4 border-l-4 border-accent italic text-secondary md:text-lg">
+          I'm actively seeking a <strong className="text-primary">Data Analyst position</strong> to apply
           my technical skills, analytical mindset, and operational knowledge to
           drive data-informed business decisions at scale.
         </p>
       </div>
     </div>
-    {/* CSS remains unchanged */}
-    <style jsx>{`
-      .about {
-        background: var(--color-bg);
-        padding: 44px 0;
-      }
-      .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 20px;
-        box-sizing: border-box;
-        width: 100%;
-      }
-      h2 {
-        color: var(--color-primary);
-        font-size: 1.45rem;
-        text-align: center;
-        margin-bottom: 28px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-      }
-      .about-content {
-        background: var(--color-card);
-        border-radius: 15px;
-        padding: 30px 28px;
-        box-shadow: 0 2px 16px rgba(54, 55, 149, 0.07);
-        color: var(--color-text);
-        transition: background 0.3s, color 0.3s;
-      }
-      .intro {
-        font-size: 1.1rem;
-        color: var(--color-secondary);
-        margin-bottom: 24px;
-        line-height: 1.65;
-        font-weight: 500;
-      }
-      h3 {
-        color: var(--color-primary);
-        font-size: 1.22rem;
-        margin-top: 26px;
-        margin-bottom: 14px;
-        font-weight: 600;
-        letter-spacing: 0.01em;
-      }
-      p {
-        color: var(--color-text);
-        line-height: 1.7;
-        margin-bottom: 18px;
-        font-size: 1.01rem;
-      }
-      .skills-highlight {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
-        margin: 22px 0;
-      }
-      .skill-box {
-        background: var(--color-bg);
-        padding: 18px 16px;
-        border-radius: 12px;
-        border-left: 4px solid var(--color-primary);
-        transition: all 0.2s;
-        color: var(--color-text);
-      }
-      .skill-box:hover {
-        box-shadow: 0 4px 16px rgba(54, 55, 149, 0.12);
-        transform: translateY(-2px);
-      }
-      .skill-box h4 {
-        color: var(--color-primary);
-        margin: 0 0 8px 0;
-        font-size: 1.05rem;
-        font-weight: 600;
-      }
-      .skill-box p {
-        color: var(--color-text);
-        margin: 0;
-        font-size: 0.98rem;
-        line-height: 1.5;
-      }
-      .achievements {
-        list-style: none;
-        padding: 0;
-        margin: 18px 0;
-      }
-      .achievements li {
-        padding: 12px 0;
-        color: var(--color-text);
-        line-height: 1.65;
-        font-size: 1.01rem;
-      }
-      .achievements li strong {
-        color: var(--color-primary);
-      }
-      .closing {
-        margin-top: 24px;
-        font-style: italic;
-        color: var(--color-secondary);
-        border-left: 3px solid var(--color-accent);
-        padding-left: 16px;
-      }
-      @media (max-width: 900px) {
-        .about-content {
-          padding: 22px 20px;
-        }
-        h3 {
-          font-size: 1.12rem;
-        }
-        .skills-highlight {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
-        }
-      }
-      @media (max-width: 600px) {
-        .about {
-          padding: 28px 0;
-        }
-        .container {
-          padding: 0 8px;
-        }
-        .about-content {
-          padding: 16px 12px;
-          border-radius: 12px;
-        }
-        h2 {
-          font-size: 1.12rem;
-          margin-bottom: 18px;
-        }
-        .intro {
-          font-size: 1.01rem;
-        }
-        p {
-          font-size: 0.98rem;
-        }
-        h3 {
-          font-size: 1.05rem;
-          margin-top: 18px;
-          margin-bottom: 10px;
-        }
-        .skills-highlight {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-        .skill-box {
-          padding: 14px 12px;
-        }
-        .achievements li {
-          font-size: 0.96rem;
-          padding: 8px 0;
-        }
-      }
-    `}</style>
   </section>
+);
+
+const SkillBox = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div className="p-4 transition-all duration-200 border-l-4 rounded-lg bg-background border-primary hover:shadow-lg hover:-translate-y-1">
+    <h4 className="mb-2 text-lg font-semibold text-primary">{title}</h4>
+    <p className="text-sm leading-relaxed text-foreground">{children}</p>
+  </div>
 );
 
 export default About;

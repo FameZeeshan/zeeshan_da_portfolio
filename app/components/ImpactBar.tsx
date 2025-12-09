@@ -1,32 +1,21 @@
 "use client";
 import React from "react";
+import { impactStats } from "../data/impact";
+
 const ImpactBar: React.FC = () => (
-  <div className="impact-bar">
-    <div>90% Less Manual Work</div>
-    <div>40+ Hours Saved/Month</div>
-    <div>3 Automation Pipelines</div>
-    <div>5,000 Records/Month</div>
-    <style jsx>{`
-      .impact-bar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 22px;
-        background: var(--color-card);
-        justify-content: center;
-        margin: 20px auto 20px auto;
-        padding: 10px 0;
-        font-weight: bold;
-        font-size: 1.09rem;
-        box-shadow: 0 2px 8px rgba(62, 72, 105, 0.12);
-        border-radius: 13px;
-        max-width: 1200px;
-      }
-      .impact-bar div {
-        flex: 1 1 140px;
-        text-align: center;
-        color: var(--color-primary);
-      }
-    `}</style>
+  <div className="w-full max-w-6xl px-4 mx-auto my-8">
+    <div className="flex flex-wrap justify-center gap-6 py-6 shadow-sm bg-card rounded-xl md:gap-10 border border-gray-100 dark:border-gray-800">
+      {impactStats.map((text, i) => (
+        <ImpactItem key={i} text={text} />
+      ))}
+    </div>
   </div>
 );
+
+const ImpactItem = ({ text }: { text: string }) => (
+  <div className="text-lg font-bold text-center text-primary md:text-xl px-4">
+    {text}
+  </div>
+);
+
 export default ImpactBar;

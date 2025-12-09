@@ -1,50 +1,25 @@
 "use client";
 import React from "react";
+import { testimonials } from "../data/testimonials";
+
 const Testimonials: React.FC = () => (
-  <section className="testimonials">
-    <h2>Testimonials</h2>
-    <div className="testimonial-card">
-      <p>
-        Mohammed's automation efforts saved our team dozens of hours every month
-        and allowed us to focus on higher value analysis.
-      </p>
-      <span>- Manager, Sutherland Global Services</span>
+  <section className="py-10 bg-background">
+    <div className="w-full max-w-4xl px-4 mx-auto md:px-6">
+      <h2 className="mb-10 text-2xl font-bold text-center text-primary md:text-3xl">Testimonials</h2>
+      <div className="grid gap-6 md:grid-cols-2">
+        {testimonials.map((t, i) => (
+          <TestimonialCard key={i} quote={t.quote} role={t.role} />
+        ))}
+      </div>
     </div>
-    <div className="testimonial-card">
-      <p>
-        He learns new analytics technologies rapidly and delivers reliable
-        results under tight deadlines.
-      </p>
-      <span>- Colleague, Data Team</span>
-    </div>
-    <style jsx>{`
-      .testimonials {
-        max-width: 700px;
-        margin: 40px auto;
-      }
-      .testimonials h2 {
-        color: var(--color-primary);
-        text-align: center;
-        font-size: 1.24rem;
-        font-weight: bold;
-        margin-bottom: 24px;
-      }
-      .testimonial-card {
-        background: var(--color-card);
-        border-left: 5px solid var(--color-accent);
-        padding: 20px;
-        border-radius: 9px;
-        font-size: 1.01rem;
-        color: var(--color-text);
-        margin-bottom: 22px;
-      }
-      .testimonial-card span {
-        display: block;
-        margin-top: 11px;
-        font-size: 0.93rem;
-        color: var(--color-secondary);
-      }
-    `}</style>
   </section>
 );
+
+const TestimonialCard = ({ quote, role }: { quote: string; role: string }) => (
+  <div className="p-6 transition-all duration-300 border-l-4 rounded-lg shadow-sm bg-card border-accent hover:shadow-md hover:-translate-y-1">
+    <p className="mb-4 text-base italic leading-relaxed text-foreground/90">"{quote}"</p>
+    <span className="block text-sm font-semibold text-secondary">- {role}</span>
+  </div>
+);
+
 export default Testimonials;
